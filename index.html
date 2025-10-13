@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zénit Pharma S.A. | Productos Farmacéuticos en Bolivia</title>
+    <meta name="description" content="Zénit Pharma S.A. comercializa productos farmacéuticos, equipos médicos y productos de salud en Bolivia. Parte del Grupo Zénit.">
+    <style>
+        :root {
+            --primary: #1a3a5f;
+            --secondary: #2c5a8a;
+            --accent: #28a745;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --pharma-green: #2e7d32;
+            --medical-blue: #1976d2;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--medical-blue));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+            font-size: 0.9rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26,58,95,0.8), rgba(25,118,210,0.8)), url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--pharma-green);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background-color: #1b5e20;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 0.5rem;
+            margin-top: 0.5rem;
+            color: white;
+            padding: 0.75rem 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--pharma-green);
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--medical-blue);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .service-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        
+        .service-body {
+            padding: 1.2rem;
+        }
+        
+        .service-body h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--medical-blue);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .product-content {
+            padding: 1.2rem;
+        }
+        
+        .product-content h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .portfolio-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .portfolio-img {
+            height: 200px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .portfolio-content {
+            padding: 1.2rem;
+        }
+        
+        .portfolio-content h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .company-info {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 1.5rem;
+        }
+        
+        .company-info h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .company-contact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+        
+        /* Investment Section */
+        .investment-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .stat-box h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-box p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+        }
+        
+        .contact-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        
+        .contact-message {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-column {
+            flex: 1;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.6rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive Styles */
+        @media (min-width: 768px) {
+            .hero {
+                padding: 5rem 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                flex-direction: row;
+            }
+            
+            .investment-stats {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .contact-container {
+                flex-direction: row;
+            }
+            
+            .footer-content {
+                flex-direction: row;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+            
+            .services-grid, .products-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .investment-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>ZÉNIT <span>PHARMA</span> S.A.</h1>
+                </div>
+                <div class="mobile-menu" aria-label="Abrir menú">☰</div>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#distribucion">Distribución</a></li>
+                        <li><a href="#inversion">Inversión</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="../index.html">Grupo Zénit</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+        <div class="container">
+            <h2 id="hero-title">Salud y Bienestar para Bolivia</h2>
+            <p>Zénit Pharma S.A. comercializa productos farmacéuticos, equipos médicos y productos de salud de alta calidad en todo el territorio boliviano.</p>
+            <div class="btn-container">
+                <a href="#productos" class="btn" aria-label="Ver nuestros productos">Ver Productos</a>
+                <a href="#contacto" class="btn btn-outline" aria-label="Contactar para más información">Contactar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Ofrecemos una amplia gama de servicios en el sector farmacéutico y de salud</p>
+            </div>
+            <div class="services-grid">
+                <!-- Productos Farmacéuticos -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Productos Farmacéuticos</h3>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-icon">💊</div>
+                        <h4>Medicamentos</h4>
+                        <p>Comercialización de medicamentos de uso humano y veterinario, debidamente registrados y autorizados por las autoridades sanitarias.</p>
+                    </div>
+                </div>
+                
+                <!-- Equipos Médicos -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Equipos Médicos</h3>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-icon">🩺</div>
+                        <h4>Equipos de Diagnóstico</h4>
+                        <p>Venta y distribución de equipos médicos, quirúrgicos y de diagnóstico, así como insumos hospitalarios de alta calidad.</p>
+                    </div>
+                </div>
+                
+                <!-- Productos de Salud -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Productos de Salud</h3>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-icon">🌿</div>
+                        <h4>Salud Natural</h4>
+                        <p>Comercialización de productos naturales, suplementos alimenticios y productos de bienestar para una vida saludable.</p>
+                    </div>
+                </div>
+                
+                <!-- Farmacias -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Operación de Farmacias</h3>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-icon">🏪</div>
+                        <h4>Puntos de Venta</h4>
+                        <p>Operación de farmacias, boticas y almacenes de productos farmacéuticos, previo cumplimiento de licencias y permisos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="productos" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Productos</h2>
+                <p>Ofrecemos una amplia gama de productos farmacéuticos y de salud</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img" style="background-color: #e8f5e9;">
+                        MEDICAMENTOS GENÉRICOS
+                    </div>
+                    <div class="product-content">
+                        <h4>Medicamentos Genéricos</h4>
+                        <p>Amplia variedad de medicamentos genéricos de alta calidad y bajo costo para el acceso a la salud.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-color: #e3f2fd;">
+                        EQUIPOS MÉDICOS
+                    </div>
+                    <div class="product-content">
+                        <h4>Equipos Médicos</h4>
+                        <p>Equipos de diagnóstico, monitoreo y tratamiento para hospitales, clínicas y consultorios.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-color: #f3e5f5;">
+                        PRODUCTOS NATURALES
+                    </div>
+                    <div class="product-content">
+                        <h4>Productos Naturales</h4>
+                        <p>Suplementos alimenticios, vitaminas y productos naturales para el bienestar integral.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Distribución -->
+    <section id="distribucion" class="distribution">
+        <div class="container">
+            <div class="section-title">
+                <h2>Distribución y Logística</h2>
+                <p>Contamos con una red de distribución eficiente en todo el territorio boliviano</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-color: #fff3e0;">
+                        ALMACENES ESTRATÉGICOS
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Almacenes con Control de Temperatura</h4>
+                        <p>Contamos con almacenes estratégicamente ubicados con control de temperatura para garantizar la calidad de los productos.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-color: #e0f2f1;">
+                        DISTRIBUCIÓN NACIONAL
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Cobertura Nacional</h4>
+                        <p>Llegamos a todos los departamentos de Bolivia con una flota de transporte especializada en productos farmacéuticos.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-color: #fce4ec;">
+                        CUMPLIMIENTO REGULATORIO
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Registros Sanitarios</h4>
+                        <p>Garantizamos el cumplimiento de todos los registros sanitarios requeridos por el Ministerio de Salud y Deportes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inversión -->
+    <section id="inversion" class="investment">
+        <div class="container">
+            <div class="section-title">
+                <h2>Oportunidades de Inversión</h2>
+                <p>Invierta en el sector farmacéutico en Bolivia</p>
+            </div>
+            
+            <div class="investment-stats">
+                <div class="stat-box">
+                    <h3>Bs. 1.74M</h3>
+                    <p>Inversión Inicial</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Bs. 125K</h3>
+                    <p>Costo Operativo Mensual</p>
+                </div>
+                <div class="stat-box">
+                    <h3>3+</h3>
+                    <p>Departamentos</p>
+                </div>
+                <div class="stat-box">
+                    <h3>100%</h3>
+                    <p>Capital Suscrito</p>
+                </div>
+            </div>
+            
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Detalles de la Inversión</h3>
+                <p><strong>Inversión Inicial:</strong> Bs. 1,740,000 (aproximadamente $us 250,000)</p>
+                <p><strong>Costo Operativo Mensual:</strong> Bs. 125,280 (aproximadamente $us 18,000)</p>
+                <p><strong>Zonas de Rentabilidad:</strong> La Paz, Cochabamba, Santa Cruz (Eje troncal)</p>
+                <p><strong>Desglose de Inversión:</strong></p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Inventario Inicial: Bs. 1,044,000</li>
+                    <li>Almacén y Logística: Bs. 348,000</li>
+                    <li>Registros Sanitarios (AGEMED): Bs. 348,000</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Nosotros</h2>
+                <p>Conozca más sobre nuestra empresa y nuestro compromiso con la salud en Bolivia</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Nuestra Misión</h3>
+                    <p>Zénit Pharma S.A. es una empresa especializada en la comercialización, importación, exportación, distribución y representación de productos farmacéuticos, equipos médicos y productos de salud, constituida como parte del Grupo Zénit S.A.</p>
+                    <p>Nuestra misión es proporcionar productos de salud de alta calidad que contribuyan al bienestar de la población boliviana, asegurando el cumplimiento de todas las normativas sanitarias.</p>
+                    
+                    <div class="company-info">
+                        <h3>Información Corporativa</h3>
+                        <p><strong>Zénit Pharma S.A.</strong> es una sociedad anónima constituida bajo las leyes de Bolivia.</p>
+                        <p>Forma parte del holding empresarial <strong>GRUPO ZÉNIT S.A.</strong>, que ejerce la dirección estratégica y supervisión sobre nuestras operaciones.</p>
+                        <div class="company-contact">
+                            <span>📍</span>
+                            <p><strong>Zonas de Operación:</strong> La Paz, Cochabamba, Santa Cruz (Eje troncal)</p>
+                        </div>
+                        <div class="company-contact">
+                            <span>💼</span>
+                            <p><strong>Objeto Social:</strong> Comercialización de productos farmacéuticos, equipos médicos y productos de salud</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto</h2>
+                <p>Póngase en contacto con nosotros para más información sobre nuestros productos y servicios</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 style="color:var(--primary); margin-bottom:1.5rem;">Información de Contacto</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Ubicaciones</h4>
+                            <p>La Paz, Cochabamba, Santa Cruz, Bolivia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email Corporativo</h4>
+                            <p><a href="mailto:gersonisaimachuaoniava@gmail.com">gersonisaimachuaoniava@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">👤</div>
+                        <div>
+                            <h4>Contacto Principal</h4>
+                            <p>Gerson Isai Machua Oniava<br>Presidente del Directorio - Grupo Zénit</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">💊</div>
+                        <div>
+                            <h4>Especialización</h4>
+                            <p>Productos farmacéuticos, equipos médicos y productos de salud</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3 style="color:var(--primary); margin-bottom:1.5rem;">Proceso de Distribución</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">1</div>
+                        <div>
+                            <h4>Selección de Productos</h4>
+                            <p>Identificamos y seleccionamos productos de calidad con los mejores laboratorios</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">2</div>
+                        <div>
+                            <h4>Registro Sanitario</h4>
+                            <p>Gestionamos todos los registros sanitarios requeridos por el Ministerio de Salud</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">3</div>
+                        <div>
+                            <h4>Almacenamiento y Distribución</h4>
+                            <p>Almacenamos en condiciones óptimas y distribuimos a nivel nacional</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">4</div>
+                        <div>
+                            <h4>Seguimiento y Soporte</h4>
+                            <p>Brindamos seguimiento y soporte continuo a nuestros clientes y distribuidores</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-message">
+                <h3 style="color:var(--primary); margin-bottom:1rem;">¿Interesado en Nuestros Productos?</h3>
+                <p>Para obtener información detallada sobre nuestros productos, precios, oportunidades de distribución o inversión, por favor contáctenos directamente a través de nuestro correo electrónico.</p>
+                <a href="mailto:gersonisaimachuaoniava@gmail.com" class="btn" style="margin-top:1.5rem;" aria-label="Enviar correo de interés">Contactar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ZÉNIT PHARMA S.A.</h3>
+                    <p>Empresa especializada en productos farmacéuticos, equipos médicos y productos de salud, parte del Grupo Zénit S.A.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#distribucion">Distribución</a></li>
+                        <li><a href="#inversion">Inversión</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="../index.html">Grupo Zénit</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>📍 La Paz, Cochabamba, Santa Cruz, Bolivia</li>
+                        <li>📧 <a href="mailto:gersonisaimachuaoniava@gmail.com" style="color:#ccc; text-decoration:none;">gersonisaimachuaoniava@gmail.com</a></li>
+                        <li>👤 Gerson Isai Machua Oniava</li>
+                        <li>💊 Especialistas en productos farmacéuticos</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 ZÉNIT PHARMA S.A. - Todos los derechos reservados | Parte de GRUPO ZÉNIT S.A.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a, .btn').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (!href || href.startsWith('mailto:') || href.startsWith('http')) return;
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                if (!targetElement) return;
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                document.querySelector('nav').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
