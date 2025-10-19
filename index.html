@@ -213,7 +213,7 @@
             font-size: 0.95rem;
         }
         
-        /* Services Section */
+        /* Services Section (used for Group Companies as well) */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -227,6 +227,10 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s, box-shadow 0.3s;
             border-top: 4px solid var(--medical-blue);
+            /* New properties for link cards */
+            display: block; 
+            text-decoration: none; 
+            color: inherit;
         }
         
         .service-card:hover {
@@ -593,10 +597,15 @@
                         <li><a href="#servicios">Servicios</a></li>
                         <li><a href="#productos">Productos</a></li>
                         <li><a href="#distribucion">Distribución</a></li>
+                        <!-- NEW LINK -->
+                        <li><a href="#grupo">Empresas del Grupo</a></li> 
+                        <!-- END NEW LINK -->
                         <li><a href="#inversion">Inversión</a></li>
                         <li><a href="#nosotros">Nosotros</a></li>
                         <li><a href="#contacto">Contacto</a></li>
-                        <li><a href="../index.html">Grupo Zénit</a></li>
+                        <!-- UPDATED EXTERNAL LINK -->
+                        <li><a href="https://gersonisai.github.io/GRUPO-Z-NIT-S.A./" target="_blank">GRUPO ZÉNIT</a></li> 
+                        <!-- END UPDATED EXTERNAL LINK -->
                     </ul>
                 </nav>
             </div>
@@ -751,6 +760,95 @@
             </div>
         </div>
     </section>
+    
+    <!-- EMPRESAS DEL GRUPO ZÉNIT S.A. (NEW SECTION) -->
+    <section id="grupo" class="group-companies">
+        <div class="container">
+            <div class="section-title">
+                <h2>Empresas del Grupo Zénit S.A.</h2>
+                <p>Conozca el holding empresarial y las diversas áreas de negocio que componen el Grupo Zénit S.A.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Card 1: Grupo Zénit (Holding) -->
+                <a href="https://gersonisai.github.io/GRUPO-Z-NIT-S.A./" target="_blank" class="service-card" style="border-top-color: var(--primary);">
+                    <div class="service-header"><h3>GRUPO ZÉNIT S.A.</h3></div>
+                    <div class="service-body">
+                        <div class="service-icon">🏢</div>
+                        <h4>Holding Empresarial</h4>
+                        <p>Estrategia, dirección y supervisión de todas las unidades de negocio del grupo.</p>
+                    </div>
+                </a>
+                
+                <!-- Card 2: Zénit Financiera -->
+                <a href="https://gersonisai.github.io/Z-nit-Financiera-S.A./" target="_blank" class="service-card" style="border-top-color: #ffc107;">
+                    <div class="service-header"><h3>ZÉNIT FINANCIERA S.A.</h3></div>
+                    <div class="service-body">
+                        <div class="service-icon">💰</div>
+                        <h4>Servicios Financieros</h4>
+                        <p>Soluciones de inversión, crédito y gestión de capital para empresas y proyectos.</p>
+                    </div>
+                </a>
+                
+                <!-- Card 3: Zénit Software -->
+                <a href="https://gersonisai.github.io/Z-nit-Software-Solutions-S.A./" target="_blank" class="service-card" style="border-top-color: #007bff;">
+                    <div class="service-header"><h3>ZÉNIT SOFTWARE S.A.</h3></div>
+                    <div class="service-body">
+                        <div class="service-icon">💻</div>
+                        <h4>Soluciones Tecnológicas</h4>
+                        <p>Desarrollo de software y consultoría tecnológica para optimizar procesos empresariales.</p>
+                    </div>
+                </a>
+                
+                <!-- Card 4: Zénit Agro-Industrias -->
+                <a href="https://gersonisai.github.io/Z-nit-Agro-Industrias-S.A./" target="_blank" class="service-card" style="border-top-color: #28a745;">
+                    <div class="service-header"><h3>ZÉNIT AGRO-INDUSTRIAS S.A.</h3></div>
+                    <div class="service-body">
+                        <div class="service-icon">🚜</div>
+                        <h4>Sector Agroindustrial</h4>
+                        <p>Producción, procesamiento y comercialización de productos agrícolas y ganaderos.</p>
+                    </div>
+                </a>
+                
+                <!-- Card 5: Zénit Cargo Transport -->
+                <a href="https://gersonisai.github.io/Z-nit-Cargo-Transport-S.A./" target="_blank" class="service-card" style="border-top-color: #dc3545;">
+                    <div class="service-header"><h3>ZÉNIT CARGO S.A.</h3></div>
+                    <div class="service-body">
+                        <div class="service-icon">🚚</div>
+                        <h4>Transporte y Logística</h4>
+                        <p>Servicios de transporte de carga y soluciones logísticas a nivel nacional e internacional.</p>
+                    </div>
+                </a>
+                
+                <!-- Card 6: Zénit Hospitality -->
+                <a href="https://gersonisai.github.io/Z-nit-Hospitality-Group-S.A./" target="_blank" class="service-card" style="border-top-color: #6f42c1;">
+                    <div class="service-header"><h3>ZÉNIT HOSPITALITY S.A.</h3></div>
+                    <div class="service-body">
+                        <div class="service-icon">🏨</div>
+                        <h4>Hotelería y Turismo</h4>
+                        <p>Gestión de hoteles, resorts y servicios turísticos de alta calidad en Bolivia.</p>
+                    </div>
+                </a>
+                
+                <!-- Card 7: Yasikari Web (Project) -->
+                <a href="https://gersonisai.github.io/yasikari-web/" target="_blank" class="service-card" style="border-top-color: #17a2b8;">
+                    <div class="service-header"><h3>YASIKARI WEB</h3></div>
+                    <div class="service-body">
+                        <div class="service-icon">🌐</div>
+                        <h4>Plataforma Digital</h4>
+                        <p>Proyectos web y plataformas digitales de comercio electrónico y servicios en línea.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: #6c757d;">Para conocer el perfil del Presidente del Directorio, Gerson Isai Machua Oniava, visite su sitio web oficial.</p>
+                <a href="https://sites.google.com/view/gerson-isai-machua-oniava/inicio" target="_blank" class="btn btn-outline" style="border: 2px solid var(--primary); color: var(--primary); background-color: transparent; margin-top: 1rem; display: inline-block;">
+                    Perfil de Gerson Isai Machua Oniava
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- END EMPRESAS DEL GRUPO ZÉNIT S.A. (NEW SECTION) -->
 
     <!-- Inversión -->
     <section id="inversion" class="investment">
@@ -810,7 +908,7 @@
                     <div class="company-info">
                         <h3>Información Corporativa</h3>
                         <p><strong>Zénit Pharma S.A.</strong> es una sociedad anónima constituida bajo las leyes de Bolivia.</p>
-                        <p>Forma parte del holding empresarial <strong>GRUPO ZÉNIT S.A.</strong>, que ejerce la dirección estratégica y supervisión sobre nuestras operaciones.</p>
+                        <p>Forma parte del holding empresarial <strong><a href="https://gersonisai.github.io/GRUPO-Z-NIT-S.A./" target="_blank" style="color: var(--primary); text-decoration: underline;">GRUPO ZÉNIT S.A.</a></strong>, que ejerce la dirección estratégica y supervisión sobre nuestras operaciones.</p>
                         <div class="company-contact">
                             <span>📍</span>
                             <p><strong>Zonas de Operación:</strong> La Paz, Cochabamba, Santa Cruz (Eje troncal)</p>
@@ -857,7 +955,7 @@
                         <div class="contact-icon">👤</div>
                         <div>
                             <h4>Contacto Principal</h4>
-                            <p>Gerson Isai Machua Oniava<br>Presidente del Directorio - Grupo Zénit</p>
+                            <p>Gerson Isai Machua Oniava<br>Presidente del Directorio - Grupo Zénit (<a href="https://sites.google.com/view/gerson-isai-machua-oniava/inicio" target="_blank" style="color: var(--medical-blue); text-decoration: underline;">Sitio Web</a>)</p>
                         </div>
                     </div>
                     
@@ -922,6 +1020,7 @@
                 <div class="footer-column">
                     <h3>ZÉNIT PHARMA S.A.</h3>
                     <p>Empresa especializada en productos farmacéuticos, equipos médicos y productos de salud, parte del Grupo Zénit S.A.</p>
+                    <p style="margin-top: 10px;">Presidente: <a href="https://sites.google.com/view/gerson-isai-machua-oniava/inicio" target="_blank" style="color: var(--accent); text-decoration: none;">Gerson Isai Machua Oniava</a></p>
                 </div>
                 
                 <div class="footer-column">
@@ -931,10 +1030,15 @@
                         <li><a href="#servicios">Servicios</a></li>
                         <li><a href="#productos">Productos</a></li>
                         <li><a href="#distribucion">Distribución</a></li>
+                        <!-- UPDATED/NEW LINK -->
+                        <li><a href="#grupo">Empresas del Grupo</a></li>
+                        <!-- END UPDATED/NEW LINK -->
                         <li><a href="#inversion">Inversión</a></li>
                         <li><a href="#nosotros">Nosotros</a></li>
                         <li><a href="#contacto">Contacto</a></li>
-                        <li><a href="../index.html">Grupo Zénit</a></li>
+                        <!-- UPDATED EXTERNAL LINK -->
+                        <li><a href="https://gersonisai.github.io/GRUPO-Z-NIT-S.A./" target="_blank">GRUPO ZÉNIT (Holding)</a></li>
+                        <!-- END UPDATED EXTERNAL LINK -->
                     </ul>
                 </div>
                 
@@ -965,14 +1069,17 @@
         document.querySelectorAll('nav a, .btn').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
-                if (!href || href.startsWith('mailto:') || href.startsWith('http')) return;
+                // Allow mailto: and absolute external links (http/https) to bypass smooth scroll
+                if (!href || href.startsWith('mailto:') || href.startsWith('http')) return; 
                 e.preventDefault();
                 const targetElement = document.querySelector(href);
                 if (!targetElement) return;
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    // Adjust scroll position to account for sticky header
+                    top: targetElement.offsetTop - 80, 
                     behavior: 'smooth'
                 });
+                // Close mobile menu after clicking a link
                 document.querySelector('nav').classList.remove('active');
             });
         });
